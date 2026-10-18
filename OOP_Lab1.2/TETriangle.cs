@@ -38,15 +38,9 @@ namespace OOP_Lab1._2
         public virtual void Input()
         {
             Console.Write("Введіть довжину сторони рівностороннього трикутника: ");
-            if (double.TryParse(Console.ReadLine(), out double value))
-            {
-                side = value;
-            }
-            else
-            {
-                Console.WriteLine("Невірне введення. Встановлено значення за замовчуванням: 1.0");
-                side = 1.0;
-            }
+            side = double.Parse(Console.ReadLine());
+            if (side <= 0)
+                throw new ArgumentException("Довжина сторони трикутника має бути більшою за нуль");
         }
         public virtual double GetPerimeter()
         {
@@ -72,6 +66,8 @@ namespace OOP_Lab1._2
         }
         public static TETriangle operator *(TETriangle t1, double a)
         {
+            if (a <= 0)
+                throw new ArgumentException("Число на яке множаться сторони трикутника має бути більше 0");
             return new TETriangle(t1.side * a);
         }
         public static TETriangle operator *(double a, TETriangle triangle)

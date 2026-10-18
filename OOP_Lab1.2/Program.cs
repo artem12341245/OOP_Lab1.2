@@ -6,7 +6,7 @@
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-            Console.WriteLine("ТЕСТУВАННЯ КЛАСУ TETriangle");
+            Console.WriteLine("Тестування класу TETriangle");
 
             TETriangle t1 = new TETriangle(4.0);
             Console.WriteLine($"t1: {t1}");
@@ -30,7 +30,7 @@
             Console.WriteLine($"\nРезультат t1 * 2.5: {t4}");
             Console.WriteLine($"Результат 1.5 * t2: {t5}");
 
-            Console.WriteLine("\nТЕСТУВАННЯ КЛАСУ TEPiramid");
+            Console.WriteLine("\nТестування класу TEPiramid");
 
             TEPiramid pyramid1 = new TEPiramid(6.0, 9.0);
             Console.WriteLine($"pyramid1: {pyramid1}");

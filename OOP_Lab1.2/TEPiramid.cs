@@ -43,15 +43,9 @@ namespace OOP_Lab1._2
         {
             base.Input();
             Console.Write("Введіть висоту піраміди: ");
-            if (double.TryParse(Console.ReadLine(), out double value))
-            {
-                Height = value;
-            }
-            else
-            {
-                Console.WriteLine("Невірне введення висоти. Встановлено значення за замовчуванням: 1.0");
-                height = 1.0;
-            }
+            Height = double.Parse(Console.ReadLine());
+            if (Height <= 0)
+                throw new ArgumentException("Довжина сторони трикутника має бути більшою за нуль");
         }
         public override string ToString()
         {
